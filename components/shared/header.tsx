@@ -56,22 +56,22 @@ export const Header: React.FC<Props> = ({
       <Container className="flex items-center justify-between py-8">
         <Link href="/">
           <div className="flex items-center gap-4">
-            <Image src="/logo.png" width={35} height={35} alt="Logo" />
+            <Image src="/sherbet.png" width={200} height={110} alt="Logo" />
             <div>
               {/* <h1 className="text-2xl uppercase font-black">Next Pizza</h1> */}
               {/* <p className="text-sm text-gray-400 leading-3">вкусней уже некуда</p> */}
             </div>
           </div>
         </Link>
-        <nav>
-          <ul>
+        <nav className="menu2">
+          <ul className="topmenu">
             <li>
-              <a className="top1" href="/sherbet/aboutus">
+              <a className="top1 top" href="/sherbet/aboutus">
                 О НАС
               </a>
             </li>
             <li>
-              <a className="top2 submenu-link" href="/sherbet/store">
+              <a className="top2  submenu-link" href="/sherbet/store">
                 МАГАЗИН
               </a>
             </li>

@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { cn } from '@/lib/utils';
-import React from 'react';
-import { Container } from './container';
-import { Categories } from './categories';
-import { SortPopup } from './sort-popup';
-import { Category } from '@prisma/client';
-import { CartButton } from './cart-button';
+import { cn } from "@/lib/utils";
+import React from "react";
+import { Container } from "./container";
+import { Categories } from "./categories";
+import { SortPopup } from "./sort-popup";
+import { Category } from "@prisma/client";
+import { CartButton } from "./cart-button";
 
 interface Props {
   categories: Category[];
@@ -25,23 +25,30 @@ export const TopBar: React.FC<Props> = ({ categories, className }) => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <div className={cn('sticky top-0 bg-white py-5 shadow-lg shadow-black/5 z-10', className)}>
+    <div
+      className={cn(
+        "sticky top-0 bg-dark-black py-5 shadow-lg shadow-black/5 z-10",
+        className
+      )}
+    >
       <Container className="flex items-center justify-between ">
         <Categories items={categories} />
         <div className="flex items-center">
           <SortPopup />
           <CartButton
             className={cn(
-              'transition-all',
-              !cartVisible ? 'invisible w-0 p-0 opacity-0' : 'visible ml-5 opacity-100',
+              "transition-all",
+              !cartVisible
+                ? "invisible w-0 p-0 opacity-0"
+                : "visible ml-5 opacity-100"
             )}
           />
         </div>
