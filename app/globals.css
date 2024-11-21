@@ -99,6 +99,14 @@ html {
   @apply border-t-primary border-l-primary !important;
 }
 
+.sherbet {
+  position: absolute;
+}
+
+/* .monts {
+  font-family: "Montserrat";
+} */
+
 /* стили style.css */
 body {
   margin: 0px;
@@ -137,7 +145,7 @@ header a {
 }
 .topmenu > li {
   position: relative;
-  font-family: "Montserrat";
+  /* font-family: "Montserrat"; */
   font-style: normal;
   font-weight: 600;
   color: #ffffff;
@@ -207,3 +215,334 @@ header a {
   color: #1dab5f;
 }
 /* конец style.css */
+
+/* начало aboutus.css */
+body {
+  background-color: #404040;
+  zoom: 79.5%;
+}
+
+.back {
+  width: 100%;
+  margin-top: -145px;
+  height: 50%;
+  padding-left: 0px;
+}
+
+.id1 h1 {
+  position: absolute;
+  width: 852px;
+  height: 66px;
+  left: 950px;
+  top: 405px;
+
+  /* font-family: "Montserrat"; */
+  font-style: normal;
+  font-weight: 400;
+  font-size: 54px;
+  line-height: 66px;
+  /* identical to box height */
+  letter-spacing: -0.01em;
+
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.id1 h2 {
+  position: absolute;
+  width: 639px;
+  height: 138px;
+  left: 1090px;
+  top: 570px;
+
+  /* font-family: "Montserrat"; */
+  font-style: normal;
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 46px;
+  text-align: center;
+  letter-spacing: -0.02em;
+
+  color: #b0b0b0;
+}
+
+.back2 {
+  width: 100%;
+  margin-left: 0px;
+  margin-top: -20px;
+}
+
+.hr1 {
+  position: absolute;
+  width: 610px;
+  height: 0px;
+  left: 1100px;
+  top: 512px;
+  border: 2px solid #c8c8c8;
+}
+
+.hr2 {
+  position: absolute;
+  width: 610px;
+  height: 0px;
+  left: 1100px;
+  top: 731px;
+  border: 2px solid #c8c8c8;
+}
+
+.txtback {
+  width: 80%;
+  height: 10%;
+  margin-left: 10%;
+  margin-top: 8%;
+}
+
+.txt1 {
+  width: 398px;
+  height: 280px;
+  margin-left: 13%;
+  margin-top: -19%;
+
+  /* font-family: "Montserrat"; */
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 35px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.txt2 {
+  width: 464px;
+  height: 263px;
+  margin-left: 37%;
+  margin-top: -16.5%;
+  /* font-family: "Montserrat"; */
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 40px;
+  align-items: center;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.txt3 {
+  position: absolute;
+  width: 402px;
+  height: 140px;
+  margin-left: 65%;
+  margin-top: -10.5%;
+  /* font-family: "Montserrat"; */
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 40px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.bl3back {
+  width: 100%;
+  margin-top: 10%;
+}
+
+.txt {
+  position: absolute;
+  width: 662px;
+  height: 469px;
+  margin-left: 120px;
+  margin-top: -35%;
+}
+
+.txt hr {
+  width: 600px;
+  height: 0px;
+  margin-top: 5%;
+
+  border: 2px solid #c8c8c8;
+}
+.txt h2 {
+  width: 340px;
+  height: 27px;
+  margin-left: 20%;
+
+  /* font-family: "Montserrat"; */
+  font-style: normal;
+  font-weight: 300;
+  font-size: 38px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.txt div {
+  width: 610px;
+  height: 312px;
+  margin-top: 5%;
+  /* font-family: "Montserrat"; */
+  font-style: normal;
+  font-weight: 400;
+  font-size: 31px;
+  line-height: 39px;
+  text-align: center;
+  letter-spacing: -0.02em;
+
+  color: #b0b0b0;
+}
+
+.bl4back {
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 8%;
+}
+
+.bl5back {
+  width: 100%;
+  margin-top: 8%;
+}
+.bl6back {
+  width: 100%;
+  margin-top: -7%;
+}
+.bl7back {
+  width: 100%;
+  margin-top: -7%;
+}
+
+.backfoot {
+  position: relative;
+  width: 100%;
+  margin-top: -7%;
+  z-index: -1;
+  margin-bottom: -5%;
+}
+
+.logofoot {
+  width: 18%;
+  margin-top: -32%;
+  margin-left: 40%;
+}
+
+.txtfoot {
+  width: 652px;
+  height: 49px;
+  /* font-family: "Montserrat"; */
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 49px;
+  margin-top: -11%;
+  margin-left: 33.5%;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.footer {
+  margin-top: 4.5%;
+  margin-left: 6%;
+}
+.geo {
+  width: 95px;
+  height: 95px;
+  margin-top: -70px;
+  display: inline-block;
+}
+.spgeo {
+  width: 260px;
+  height: 87px;
+  padding-left: 15px;
+  display: inline-block;
+  /* font-family: "Montserrat"; */
+  letter-spacing: -0.02em;
+  font-style: normal;
+  font-size: 23px;
+  color: #828282;
+  line-height: 18px;
+}
+
+.tel {
+  width: 95px;
+  height: 95px;
+  margin-top: -70px;
+  margin-left: 200px;
+  display: inline-block;
+}
+
+.teldiv {
+  display: inline;
+}
+
+.office-center {
+  margin-left: 20%;
+}
+
+.numb {
+  display: inline-block;
+  width: 290px;
+  height: 100px;
+  padding-left: 15px;
+  padding-top: -10px;
+  line-height: 28px;
+  /* font-family: "Montserrat"; */
+  font-style: normal;
+  font-size: 25px;
+  color: #828282;
+}
+
+.ssilky {
+  margin-top: -4%;
+  margin-left: 60%;
+}
+.ainst {
+  width: 200px;
+  height: 23px;
+  text-decoration: none;
+  /* font-family: "Montserrat"; */
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 23px;
+  color: #ffffff;
+  display: inline;
+}
+
+.inst {
+  width: 35px;
+  height: 35px;
+  display: inline;
+}
+
+.amail {
+  width: 250px;
+  height: 23px;
+  padding-left: 9%;
+  text-decoration: none;
+  /* font-family: "Montserrat"; */
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 23px;
+  color: #ffffff;
+  display: inline;
+  white-space: nowrap;
+}
+.mail {
+  width: 35px;
+  height: 35px;
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.text {
+  padding-left: 15px;
+  display: inline-block;
+}
+
+/* конец aboutus.css */

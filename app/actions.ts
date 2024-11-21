@@ -1,15 +1,15 @@
-'use server';
+"use server";
 
-import { TFormOrderData } from '@/components/shared/schemas/order-form-schema';
-import { getUserSession } from '@/lib/get-user-session';
-import { prisma } from '@/lib/prisma';
-import { sendEmail } from '@/lib/send-email';
-import { OrderStatus, Prisma, UserRole } from '@prisma/client';
-import { hashSync } from 'bcrypt';
-import { cookies } from 'next/headers';
-import { createPayment } from '@/lib/create-payment';
-import { CreateUserFormValues } from '@/components/shared/dashboard/forms/create-user-form/constants';
-import { revalidatePath } from 'next/cache';
+import { TFormOrderData } from "@/components/shared/schemas/order-form-schema";
+import { getUserSession } from "@/lib/get-user-session";
+import { prisma } from "@/lib/prisma";
+import { sendEmail } from "@/lib/send-email";
+import { OrderStatus, Prisma, UserRole } from "@prisma/client";
+import { hashSync } from "bcrypt";
+import { cookies } from "next/headers";
+import { createPayment } from "@/lib/create-payment";
+import { CreateUserFormValues } from "@/components/shared/dashboard/forms/create-user-form/constants";
+import { revalidatePath } from "next/cache";
 
 export async function registerUser(body: Prisma.UserCreateInput) {
   try {
@@ -21,10 +21,10 @@ export async function registerUser(body: Prisma.UserCreateInput) {
 
     if (user) {
       if (!user.verified) {
-        throw new Error('Почта не подтверждена');
+        throw new Error("Почта не подтверждена");
       }
 
-      throw new Error('Пользователь уже существует');
+      throw new Error("Пользователь уже существует");
     }
 
     const createdUser = await prisma.user.create({
@@ -51,9 +51,13 @@ export async function registerUser(body: Prisma.UserCreateInput) {
     <p><a href="http://localhost:3000/api/auth/verify?code=${code}">Подтвердить регистрацию</a></p>
     `;
 
-    await sendEmail(createdUser.email, 'Next Pizza / Подтверждение регистрации', html);
+    await sendEmail(
+      createdUser.email,
+      "Next Pizza / Подтверждение регистрации",
+      html
+    );
   } catch (error) {
-    console.log('Error [CREATE_USER]', error);
+    console.log("Error [CREATE_USER]", error);
     throw error;
   }
 }
@@ -63,7 +67,7 @@ export async function updateUserInfo(body: Prisma.UserCreateInput) {
     const currentUser = await getUserSession();
 
     if (!currentUser) {
-      throw new Error('Пользователь не найден');
+      throw new Error("Пользователь не найден");
     }
 
     await prisma.user.update({
@@ -76,7 +80,7 @@ export async function updateUserInfo(body: Prisma.UserCreateInput) {
       },
     });
   } catch (error) {
-    console.log('Error [UPDATE_USER]', error);
+    console.log("Error [UPDATE_USER]", error);
     throw error;
   }
 }
@@ -86,7 +90,7 @@ export async function createOrder(data: TFormOrderData) {
     const currentUser = await getUserSession();
     const userId = Number(currentUser?.id);
     const cookieStore = cookies();
-    const cartToken = cookieStore.get('cartToken')?.value;
+    const cartToken = cookieStore.get("cartToken")?.value;
 
     const userCart = await prisma.cart.findFirst({
       include: {
@@ -119,13 +123,13 @@ export async function createOrder(data: TFormOrderData) {
     }
 
     if (!userCart) {
-      throw new Error('Cart not found');
+      throw new Error("Cart not found");
     }
 
     const order = await prisma.order.create({
       data: {
-        userId,
-        fullName: data.firstName + ' ' + data.lastName,
+        userId: userId ? userId : 1, // Если userId есть, используем его, в противном случае — 1
+        fullName: data.firstName + " " + data.lastName,
         email: data.email,
         phone: data.phone,
         address: data.address,
@@ -175,12 +179,16 @@ export async function createOrder(data: TFormOrderData) {
     `;
 
     if (userCart.user?.email) {
-      await sendEmail(userCart.user?.email, `Next Pizza / Оплатите заказ #${order?.id}`, html);
+      await sendEmail(
+        userCart.user?.email,
+        `Next Pizza / Оплатите заказ #${order?.id}`,
+        html
+      );
     }
 
     return paymentData.confirmation.confirmation_url;
   } catch (error) {
-    console.log('[CART_CHECKOUT_POST] Server error', error);
+    console.log("[CART_CHECKOUT_POST] Server error", error);
     throw error;
   }
 }
@@ -200,7 +208,7 @@ export async function updateUser(id: number, data: Prisma.UserUpdateInput) {
       },
     });
   } catch (error) {
-    console.log('Error [UPDATE_USER]', error);
+    console.log("Error [UPDATE_USER]", error);
     throw error;
   }
 }
@@ -214,9 +222,9 @@ export async function createUser(data: Prisma.UserCreateInput) {
       },
     });
 
-    revalidatePath('/dashboard/users');
+    revalidatePath("/dashboard/users");
   } catch (error) {
-    console.log('Error [CREATE_USER]', error);
+    console.log("Error [CREATE_USER]", error);
     throw error;
   }
 }
@@ -228,10 +236,13 @@ export async function deleteUser(id: number) {
     },
   });
 
-  revalidatePath('/dashboard/users');
+  revalidatePath("/dashboard/users");
 }
 
-export async function updateCategory(id: number, data: Prisma.CategoryUpdateInput) {
+export async function updateCategory(
+  id: number,
+  data: Prisma.CategoryUpdateInput
+) {
   try {
     await prisma.category.update({
       where: {
@@ -240,7 +251,7 @@ export async function updateCategory(id: number, data: Prisma.CategoryUpdateInpu
       data,
     });
   } catch (error) {
-    console.log('Error [UPDATE_CATEGORY]', error);
+    console.log("Error [UPDATE_CATEGORY]", error);
     throw error;
   }
 }
@@ -251,9 +262,9 @@ export async function createCategory(data: Prisma.CategoryCreateInput) {
       data,
     });
 
-    revalidatePath('/dashboard/categories');
+    revalidatePath("/dashboard/categories");
   } catch (error) {
-    console.log('Error [CREATE_CATEGORY]', error);
+    console.log("Error [CREATE_CATEGORY]", error);
     throw error;
   }
 }
@@ -265,10 +276,13 @@ export async function deleteCategory(id: number) {
     },
   });
 
-  revalidatePath('/dashboard/categories');
+  revalidatePath("/dashboard/categories");
 }
 
-export async function updateProduct(id: number, data: Prisma.ProductUpdateInput) {
+export async function updateProduct(
+  id: number,
+  data: Prisma.ProductUpdateInput
+) {
   try {
     await prisma.product.update({
       where: {
@@ -277,7 +291,7 @@ export async function updateProduct(id: number, data: Prisma.ProductUpdateInput)
       data,
     });
   } catch (error) {
-    console.log('Error [UPDATE_PRODUCT]', error);
+    console.log("Error [UPDATE_PRODUCT]", error);
     throw error;
   }
 }
@@ -288,9 +302,9 @@ export async function createProduct(data: Prisma.ProductCreateInput) {
       data,
     });
 
-    revalidatePath('/dashboard/products');
+    revalidatePath("/dashboard/products");
   } catch (error) {
-    console.log('Error [CREATE_PRODUCT]', error);
+    console.log("Error [CREATE_PRODUCT]", error);
     throw error;
   }
 }
@@ -302,10 +316,13 @@ export async function deleteProduct(id: number) {
     },
   });
 
-  revalidatePath('/dashboard/products');
+  revalidatePath("/dashboard/products");
 }
 
-export async function updateIngredient(id: number, data: Prisma.IngredientUpdateInput) {
+export async function updateIngredient(
+  id: number,
+  data: Prisma.IngredientUpdateInput
+) {
   try {
     await prisma.ingredient.update({
       where: {
@@ -314,7 +331,7 @@ export async function updateIngredient(id: number, data: Prisma.IngredientUpdate
       data,
     });
   } catch (error) {
-    console.log('Error [UPDATE_INGREDIENT]', error);
+    console.log("Error [UPDATE_INGREDIENT]", error);
     throw error;
   }
 }
@@ -329,9 +346,9 @@ export async function createIngredient(data: Prisma.IngredientCreateInput) {
       },
     });
 
-    revalidatePath('/dashboard/ingredients');
+    revalidatePath("/dashboard/ingredients");
   } catch (error) {
-    console.log('Error [CREATE_INGREDIENT]', error);
+    console.log("Error [CREATE_INGREDIENT]", error);
     throw error;
   }
 }
@@ -344,14 +361,17 @@ export async function deleteIngredient(id: number) {
       },
     });
 
-    revalidatePath('/dashboard/ingredients');
+    revalidatePath("/dashboard/ingredients");
   } catch (error) {
-    console.log('Error [DELETE_INGREDIENT]', error);
+    console.log("Error [DELETE_INGREDIENT]", error);
     throw error;
   }
 }
 
-export async function updateProductItem(id: number, data: Prisma.ProductItemUpdateInput) {
+export async function updateProductItem(
+  id: number,
+  data: Prisma.ProductItemUpdateInput
+) {
   try {
     await prisma.productItem.update({
       where: {
@@ -360,12 +380,14 @@ export async function updateProductItem(id: number, data: Prisma.ProductItemUpda
       data,
     });
   } catch (error) {
-    console.log('Error [UPDATE_PRODUCT_ITEM]', error);
+    console.log("Error [UPDATE_PRODUCT_ITEM]", error);
     throw error;
   }
 }
 
-export async function createProductItem(data: Prisma.ProductItemUncheckedCreateInput) {
+export async function createProductItem(
+  data: Prisma.ProductItemUncheckedCreateInput
+) {
   try {
     await prisma.productItem.create({
       data: {
@@ -376,9 +398,9 @@ export async function createProductItem(data: Prisma.ProductItemUncheckedCreateI
       },
     });
 
-    revalidatePath('/dashboard/product-items');
+    revalidatePath("/dashboard/product-items");
   } catch (error) {
-    console.log('Error [CREATE_PRODUCT_ITEM]', error);
+    console.log("Error [CREATE_PRODUCT_ITEM]", error);
     throw error;
   }
 }
@@ -391,9 +413,9 @@ export async function deleteProductItem(id: number) {
       },
     });
 
-    revalidatePath('/dashboard/product-items');
+    revalidatePath("/dashboard/product-items");
   } catch (error) {
-    console.log('Error [DELETE_PRODUCT_ITEM]', error);
+    console.log("Error [DELETE_PRODUCT_ITEM]", error);
     throw error;
   }
 }

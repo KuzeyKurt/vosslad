@@ -1,8 +1,8 @@
-import { NextRequest } from 'next/server';
-import { OrderStatus } from '@prisma/client';
-import { sendEmail } from '@/lib/send-email';
-import { prisma } from '@/lib/prisma';
-import { CartItemDTO } from '@/services/dto/cart';
+import { NextRequest } from "next/server";
+import { OrderStatus } from "@prisma/client";
+import { sendEmail } from "@/lib/send-email";
+import { prisma } from "@/lib/prisma";
+import { CartItemDTO } from "@/services/dto/cart";
 
 type PaymentCallbackData = {
   type: string;
@@ -10,8 +10,8 @@ type PaymentCallbackData = {
   object: {
     id: string;
     status: string;
-    amount: { value: string; currency: 'RUB' };
-    income_amount: { value: string; currency: 'RUB' };
+    amount: { value: string; currency: "RUB" };
+    income_amount: { value: string; currency: "RUB" };
     description: string;
     recipient: { account_id: string; gateway_id: string };
     payment_method: {
@@ -23,7 +23,7 @@ type PaymentCallbackData = {
     captured_at: string;
     created_at: string;
     test: boolean;
-    refunded_amount: { value: string; currency: 'RUB' };
+    refunded_amount: { value: string; currency: "RUB" };
     paid: boolean;
     refundable: true;
     metadata: { order_id: string };
@@ -70,11 +70,15 @@ export async function POST(req: NextRequest) {
           .map((item) => {
             return `<li>${item.productItem.product.name} | (${item.productItem.price}₽ x ${item.quantity} шт.)</li>`;
           })
-          .join('')}
+          .join("")}
     </ul>
     `;
 
-    await sendEmail(order.user.email, `Next Pizza / Заказ #${order?.id} оплачен!`, html);
+    await sendEmail(
+      order.user.email,
+      `Sherbet / Заказ #${order?.id} оплачен!`,
+      html
+    );
   }
 
   return new Response(null, {

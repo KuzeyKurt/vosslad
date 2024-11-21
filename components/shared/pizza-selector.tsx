@@ -1,7 +1,7 @@
-import { cn } from '@/lib/utils';
-import React from 'react';
-import { GroupVariants } from './group-variants';
-import { PizzaSizeItem, pizzaTypes } from '@/lib/pizza-details-to-text';
+import { cn } from "@/lib/utils";
+import React from "react";
+import { GroupVariants } from "./group-variants";
+import { PizzaSizeItem, pizzaTypes } from "@/lib/pizza-details-to-text";
 
 interface Props {
   pizzaSizes: PizzaSizeItem[];
@@ -17,16 +17,16 @@ interface Props {
 
 export const PizzaSelector: React.FC<Props> = ({
   pizzaSizes,
-  selectedSize = '20',
-  selectedPizzaType = '1',
+  selectedSize = "700",
+  selectedPizzaType = "1",
   onClickSize,
   onClickPizzaType,
   className,
 }) => {
   return (
-    <div className={cn('flex flex-col gap-3 mt-5 mb-8', className)}>
+    <div className={cn("flex flex-col gap-3 mt-5 mb-8", className)}>
       <GroupVariants
-        defaultValue="20"
+        defaultValue="700"
         items={pizzaSizes}
         onClick={onClickSize}
         selectedValue={selectedSize}

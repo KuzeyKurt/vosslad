@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { Button } from '@/components/ui/button';
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetClose,
@@ -10,14 +10,14 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from '@/components/ui/sheet';
-import { DrawerCartItem } from './drawer-cart-item';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
-import React from 'react';
-import { Title } from './title';
-import clsx from 'clsx';
-import Link from 'next/link';
-import { useCart } from '@/hooks/use-cart';
+} from "@/components/ui/sheet";
+import { DrawerCartItem } from "./drawer-cart-item";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import React from "react";
+import { Title } from "./title";
+import clsx from "clsx";
+import Link from "next/link";
+import { useCart } from "@/hooks/use-cart";
 
 export const CartDrawer: React.FC<React.PropsWithChildren> = ({ children }) => {
   const [redirecting, setRedirecting] = React.useState(false);
@@ -28,19 +28,34 @@ export const CartDrawer: React.FC<React.PropsWithChildren> = ({ children }) => {
     <Sheet>
       <SheetTrigger asChild>{children}</SheetTrigger>
       <SheetContent className="flex flex-col justify-between pb-0 bg-[#F4F1EE]">
-        <div className={clsx('flex flex-col h-full', !totalAmount && 'justify-center')}>
+        <div
+          className={clsx(
+            "flex flex-col h-full",
+            !totalAmount && "justify-center"
+          )}
+        >
           {totalAmount > 0 && (
             <SheetHeader>
               <SheetTitle>
-                В корзине <span className="font-bold">{items.length} товара</span>
+                В корзине{" "}
+                <span className="font-bold">{items.length} товара</span>
               </SheetTitle>
             </SheetHeader>
           )}
 
           {!totalAmount && (
             <div className="flex flex-col items-center justify-center w-72 mx-auto">
-              <Image src="/assets/images/empty-box.png" alt="Empty cart" width={120} height={120} />
-              <Title size="sm" text="Корзина пустая" className="text-center font-bold my-2" />
+              <Image
+                src="/assets/images/empty-box.png"
+                alt="Empty cart"
+                width={120}
+                height={120}
+              />
+              <Title
+                size="sm"
+                text="Корзина пустая"
+                className="text-center font-bold my-2"
+              />
               <p className="text-center text-neutral-500 mb-5">
                 Добавьте хотя бы одну пиццу, чтобы совершить заказ
               </p>
@@ -84,12 +99,13 @@ export const CartDrawer: React.FC<React.PropsWithChildren> = ({ children }) => {
                     <span className="font-bold text-lg">{totalAmount} ₽</span>
                   </div>
 
-                  <Link href="/cart">
+                  <Link href="/checkout">
                     <Button
                       onClick={() => setRedirecting(true)}
                       loading={loading || redirecting}
                       type="submit"
-                      className="w-full h-12 text-base">
+                      className="w-full h-12 text-base"
+                    >
                       Оформить заказ
                       <ArrowRight className="w-5 ml-2" />
                     </Button>

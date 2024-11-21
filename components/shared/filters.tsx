@@ -1,18 +1,18 @@
-'use client';
+"use client";
 
-import React from 'react';
-import qs from 'qs';
+import React from "react";
+import qs from "qs";
 
-import { Input } from '@/components/ui/input';
-import { CheckboxFiltersGroup } from '@/components/shared/checkbox-filters-group';
-import { Title } from './title';
-import { RangeSlider } from '../ui/range-slider';
-import { useRouter, useSearchParams } from 'next/navigation';
-import { useMap, useSet } from 'react-use';
-import debounce from 'lodash.debounce';
-import { Api } from '@/services/api-client';
-import { Ingredient } from '@prisma/client';
-import { FilterCheckbox } from './filter-checkbox';
+import { Input } from "@/components/ui/input";
+import { CheckboxFiltersGroup } from "@/components/shared/checkbox-filters-group";
+import { Title } from "./title";
+import { RangeSlider } from "../ui/range-slider";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useMap, useSet } from "react-use";
+import debounce from "lodash.debounce";
+import { Api } from "@/services/api-client";
+import { Ingredient } from "@prisma/client";
+import { FilterCheckbox } from "./filter-checkbox";
 
 interface Props {
   className?: string;
@@ -41,12 +41,12 @@ export const Filters: React.FC<Props> = ({ className }) => {
       debounce((params) => {
         router.push(
           `?${qs.stringify(params, {
-            arrayFormat: 'comma',
+            arrayFormat: "comma",
           })}`,
-          { scroll: false },
+          { scroll: false }
         );
       }, 300),
-    [],
+    []
   );
 
   React.useEffect(() => {
@@ -76,8 +76,8 @@ export const Filters: React.FC<Props> = ({ className }) => {
         title="Тип теста"
         onClickCheckbox={togglePizzaTypes}
         items={[
-          { text: 'Тонкое', value: '1' },
-          { text: 'Традиционное', value: '2' },
+          { text: "Тонкое", value: "1" },
+          { text: "Традиционное", value: "2" },
         ]}
       />
 
@@ -87,9 +87,9 @@ export const Filters: React.FC<Props> = ({ className }) => {
         title="Размеры"
         onClickCheckbox={toggleSizes}
         items={[
-          { text: '20 см', value: '20' },
-          { text: '30 см', value: '30' },
-          { text: '40 см', value: '40' },
+          { text: "20 см", value: "20" },
+          { text: "30 см", value: "30" },
+          { text: "40 см", value: "40" },
         ]}
       />
 
@@ -101,7 +101,7 @@ export const Filters: React.FC<Props> = ({ className }) => {
             placeholder="0"
             min={0}
             max={30000}
-            onChange={(e) => set('priceFrom', e.target.value)}
+            onChange={(e) => set("priceFrom", e.target.value)}
             value={String(filters.priceFrom || 0)}
           />
           <Input
@@ -109,7 +109,7 @@ export const Filters: React.FC<Props> = ({ className }) => {
             min={100}
             max={30000}
             placeholder="30000"
-            onChange={(e) => set('priceTo', e.target.value)}
+            onChange={(e) => set("priceTo", e.target.value)}
             value={String(filters.priceTo || 0)}
           />
         </div>
@@ -117,10 +117,13 @@ export const Filters: React.FC<Props> = ({ className }) => {
           min={0}
           max={1000}
           step={10}
-          value={[Number(filters.priceFrom) || 0, Number(filters.priceTo) || 1000]}
+          value={[
+            Number(filters.priceFrom) || 0,
+            Number(filters.priceTo) || 1000,
+          ]}
           onValueChange={([priceFrom, priceTo]) => {
-            set('priceFrom', String(priceFrom || 0));
-            set('priceTo', String(priceTo || 0));
+            set("priceFrom", String(priceFrom || 0));
+            set("priceTo", String(priceTo || 0));
           }}
         />
       </div>
@@ -133,7 +136,10 @@ export const Filters: React.FC<Props> = ({ className }) => {
         limit={6}
         onClickCheckbox={toggle}
         defaultItems={defaultIngredients}
-        items={ingredients?.map((o) => ({ text: o.name, value: o.id.toString() })) || []}
+        items={
+          ingredients?.map((o) => ({ text: o.name, value: o.id.toString() })) ||
+          []
+        }
       />
     </div>
   );
