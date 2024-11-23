@@ -53,7 +53,7 @@ export async function registerUser(body: Prisma.UserCreateInput) {
 
     await sendEmail(
       createdUser.email,
-      "Next Pizza / Подтверждение регистрации",
+      "Sherbet / Подтверждение регистрации",
       html
     );
   } catch (error) {
@@ -181,7 +181,7 @@ export async function createOrder(data: TFormOrderData) {
     if (userCart.user?.email) {
       await sendEmail(
         userCart.user?.email,
-        `Next Pizza / Оплатите заказ #${order?.id}`,
+        `Sherbet / Оплатите заказ #${order?.id}`,
         html
       );
     }

@@ -25,7 +25,7 @@ export const SortPopup: React.FC<Props> = ({ className }) => {
           <ArrowUpDown className="w-4 h-4" />
           <b>Сортировка:</b>
 
-          <b className="text-primary">популярное</b>
+          <b className="text-primary text-cyan-600">популярное</b>
         </div>
       </PopoverTrigger>
       <PopoverContent className="w-[240px]">

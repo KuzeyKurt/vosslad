@@ -38,7 +38,10 @@ export const ProductCard: React.FC<Props> = ({
             от <b>{price} ₽</b>
           </span>
 
-          <Button variant="secondary" className="text-base font-bold">
+          <Button
+            variant="secondary"
+            className="bg-green-600 text-white text-base font-bold"
+          >
             <Plus className="w-5 h-5 mr-1" />
             Добавить
           </Button>

@@ -11,6 +11,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import toast from "react-hot-toast";
 import { ProfileButton } from "./profile-button";
 import { AuthModal } from "./modals";
+import { Session } from "node:inspector/promises";
 
 interface Props {
   hasSearch?: boolean;

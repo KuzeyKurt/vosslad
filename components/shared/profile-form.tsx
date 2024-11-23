@@ -1,21 +1,21 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { updateUserInfo } from '@/app/actions';
-import { Container } from '@/components/shared/container';
-import { FormInput } from '@/components/shared/form';
+import React from "react";
+import { updateUserInfo } from "@/app/actions";
+import { Container } from "@/components/shared/container";
+import { FormInput } from "@/components/shared/form";
 import {
   TFormRegisterData,
   formRegisterSchema,
-} from '@/components/shared/modals/auth-modal/forms/schemas';
-import { Title } from '@/components/shared/title';
-import { Button } from '@/components/ui/button';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { FormProvider, useForm } from 'react-hook-form';
-import toast from 'react-hot-toast';
-import { User } from '@prisma/client';
-import { signOut } from 'next-auth/react';
-import { redirect } from 'next/navigation';
+} from "@/components/shared/modals/auth-modal/forms/schemas";
+import { Title } from "@/components/shared/title";
+import { Button } from "@/components/ui/button";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { FormProvider, useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import { User } from "@prisma/client";
+import { signOut } from "next-auth/react";
+import { redirect } from "next/navigation";
 
 interface Props {
   data: User;
@@ -27,8 +27,8 @@ export const ProfileForm: React.FC<Props> = ({ data }) => {
     defaultValues: {
       fullName: data.fullName,
       email: data.email,
-      password: '',
-      confirmPassword: '',
+      password: "",
+      confirmPassword: "",
     },
   });
 
@@ -40,19 +40,19 @@ export const ProfileForm: React.FC<Props> = ({ data }) => {
         password: data.password,
       });
 
-      toast.error('Данные обновлены 📝', {
-        icon: '✅',
+      toast.error("Данные обновлены 📝", {
+        icon: "✅",
       });
     } catch (error) {
-      return toast.error('Ошибка при обновлении данных', {
-        icon: '❌',
+      return toast.error("Ошибка при обновлении данных", {
+        icon: "❌",
       });
     }
   };
 
   const onClickSignOut = () => {
     signOut({
-      callbackUrl: '/',
+      callbackUrl: "/",
     });
   };
 
@@ -61,14 +61,31 @@ export const ProfileForm: React.FC<Props> = ({ data }) => {
       <Title text="Личные данные" size="md" className="font-bold" />
 
       <FormProvider {...form}>
-        <form className="flex flex-col gap-5 w-96 mt-10" onSubmit={form.handleSubmit(onSubmit)}>
+        <form
+          className="flex flex-col gap-5 w-96 mt-10"
+          onSubmit={form.handleSubmit(onSubmit)}
+        >
           <FormInput name="email" label="E-Mail" required />
           <FormInput name="fullName" label="Полное имя" required />
 
-          <FormInput type="password" name="password" label="Новый пароль" required />
-          <FormInput type="password" name="confirmPassword" label="Повторите пароль" required />
+          <FormInput
+            type="password"
+            name="password"
+            label="Новый пароль"
+            required
+          />
+          <FormInput
+            type="password"
+            name="confirmPassword"
+            label="Повторите пароль"
+            required
+          />
 
-          <Button disabled={form.formState.isSubmitting} className="text-base mt-10" type="submit">
+          <Button
+            disabled={form.formState.isSubmitting}
+            className="bg-green-600 text-base mt-10 "
+            type="submit"
+          >
             Сохранить
           </Button>
 
@@ -77,7 +94,8 @@ export const ProfileForm: React.FC<Props> = ({ data }) => {
             variant="secondary"
             disabled={form.formState.isSubmitting}
             className="text-base"
-            type="button">
+            type="button"
+          >
             Выйти
           </Button>
         </form>

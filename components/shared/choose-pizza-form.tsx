@@ -86,9 +86,10 @@ export const ChoosePizzaForm: React.FC<Props> = ({
         </div>
 
         <Button
+          // className="bg-green-600"
           loading={loading}
           onClick={handleClickAdd}
-          className="h-[55px] px-10 text-base rounded-[18px] w-full"
+          className="h-[55px] px-10 bg-green-600 text-base rounded-[18px] w-full"
         >
           В корзину: {totalPrice} ₽
         </Button>

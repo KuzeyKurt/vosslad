@@ -32,12 +32,12 @@ export const PizzaSelector: React.FC<Props> = ({
         selectedValue={selectedSize}
       />
 
-      <GroupVariants
+      {/* <GroupVariants
         defaultValue="1"
         items={pizzaTypes}
         onClick={onClickPizzaType}
         selectedValue={selectedPizzaType}
-      />
+      /> */}
     </div>
   );
 };

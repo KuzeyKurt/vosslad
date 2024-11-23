@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/shared/header";
+import { Providers } from "@/shared/components/shared/providers";
 
 export const metadata: Metadata = {
   title: "Sherbet | Сладости востока",
@@ -16,7 +17,7 @@ export default function RootLayout({
   return (
     <main className="min-h-screen bg-[#404040]">
       <Header />
-      {children}
+      <Providers>{children}</Providers>
       {modal}
     </main>
   );

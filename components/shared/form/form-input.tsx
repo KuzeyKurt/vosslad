@@ -1,9 +1,9 @@
-import React from 'react';
-import { useFormContext } from 'react-hook-form';
-import { RequiredSymbol } from '../required-symbol';
-import { Input } from '@/components/ui/input';
-import { ClearButton } from '../clear-button';
-import { ErrorText } from '../error-text';
+import React from "react";
+import { useFormContext } from "react-hook-form";
+import { RequiredSymbol } from "../required-symbol";
+import { Input } from "@/components/ui/input";
+import { ClearButton } from "../clear-button";
+import { ErrorText } from "../error-text";
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
@@ -12,7 +12,13 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
 }
 
-export const FormInput: React.FC<Props> = ({ className, name, label, required, ...props }) => {
+export const FormInput: React.FC<Props> = ({
+  className,
+  name,
+  label,
+  required,
+  ...props
+}) => {
   const {
     register,
     formState: { errors },
@@ -25,7 +31,7 @@ export const FormInput: React.FC<Props> = ({ className, name, label, required, .
   const text = watch(name);
 
   const onClickClear = () => {
-    setValue(name, '', { shouldValidate: true });
+    setValue(name, "", { shouldValidate: true });
   };
 
   return (
@@ -37,7 +43,11 @@ export const FormInput: React.FC<Props> = ({ className, name, label, required, .
       )}
 
       <div className="relative">
-        <Input className="h-12 text-md" {...register(name)} {...props} />
+        <Input
+          className="bg-slate-700 h-12 text-md"
+          {...register(name)}
+          {...props}
+        />
 
         {Boolean(text) && <ClearButton onClick={onClickClear} />}
       </div>

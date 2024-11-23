@@ -53,6 +53,10 @@ html {
   color: white;
 }
 
+.color-gray {
+  color: #030305;
+}
+
 .scrollbar::-webkit-scrollbar {
   width: 4px;
 }
