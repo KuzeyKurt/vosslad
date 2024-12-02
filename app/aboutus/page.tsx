@@ -33,10 +33,11 @@ Readonly<{
         </h2>
         <div className="hr2"></div>
         <Image
-          class="back2"
+          className="back2"
           src="/aboutus/potyok.png"
           width={1000}
           height={1000}
+          alt="Logo"
         />
       </div>
 
@@ -46,6 +47,7 @@ Readonly<{
           src="/aboutus/backtxt.png"
           width={1000}
           height={1000}
+          alt="Logo"
         />
         <p className="txt1"></p>
         <p className="txt2"></p>
@@ -58,6 +60,7 @@ Readonly<{
           src="/aboutus/bl3back.png"
           width={1000}
           height={1000}
+          alt="Logo"
         />
         <div className="txt">
           <h2>Шербет сегодня:</h2>
@@ -77,6 +80,7 @@ Readonly<{
           src="/aboutus/bl4back.png"
           width={1000}
           height={1000}
+          alt="Logo"
         />
       </div>
 
@@ -86,6 +90,7 @@ Readonly<{
           src="/aboutus/pahlava.png"
           width={1000}
           height={1000}
+          alt="Logo"
         />
       </div>
 
@@ -95,6 +100,7 @@ Readonly<{
           src="/aboutus/lokum.png"
           width={1000}
           height={1000}
+          alt="Logo"
         />
       </div>
 

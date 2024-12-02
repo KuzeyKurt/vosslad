@@ -30,21 +30,24 @@ Readonly<{
         </h2>
         <div id="hr2"></div>
         <Image
-          class="back2"
+          className="back2"
           src="/aboutus/potyok.png"
           width={1920}
           height={854}
+          alt="Logo"
         />
+        
       </div>
 
       <div className="id2">
         <Image
-          className="back3"
-          src="/aboutus/back3.png"
+          className="bl4back"
+          src="/info.png"
           width={1000}
           height={1000}
+   
         />
-        <h2 className="txt1">
+        {/* <h2 className="txt1">
           Центральный офис:<p></p>Республика Крым г.Симферополь.
         </h2>
         <div className="txt2">
@@ -59,6 +62,7 @@ Readonly<{
               src="/aboutus/footer/mail.png"
               width={1000}
               height={1000}
+              alt="Logo"
             />
             <div className="text">info@sherbetgroup.ru</div>
           </a>
@@ -71,19 +75,21 @@ Readonly<{
               src="/aboutus/footer/inst.png"
               width={1000}
               height={1000}
+              alt="Logo"
             />
             <div className="bl1text">tm_sherbet</div>
           </a>
-        </div>
+        </div> */}
 
         <div className="id3">
-          <Image
+          {/* <Image
             className="back4"
             src="/aboutus/contacts/back4.png"
             width={1000}
             height={1000}
-          />
-          <div className="txt4">
+          
+          /> */}
+          {/* <div className="txt4">
             <p>Москва:</p>
             <p>тел: +7 (985) 104 00 02;</p>
             <p>+7 (985) 106 08 08</p>\
@@ -95,10 +101,19 @@ Readonly<{
                 src="/aboutus/footer/mail.png"
                 width={1000}
                 height={1000}
+                alt="Logo"
               />
               <div className="bl4text">info.msk@sherbetgroup.ru</div>
             </a>
-          </div>
+          </div> */}
+          <div className="id2">
+        <Image
+          className="bl3back"
+          src="/info2.png"
+          width={1000}
+          height={1000}
+   
+        /></div>
         </div>
       </div>
 
@@ -108,6 +123,7 @@ Readonly<{
           src="/aboutus/footer/back.png"
           width={1000}
           height={1000}
+          alt="Logo"
         />
         {/* <Image src="/sherbet.png" width={250} height={250} /> */}
         {/* <Image
@@ -123,6 +139,7 @@ Readonly<{
             src="/aboutus/footer/geo.png"
             width={1000}
             height={1000}
+            alt="Logo"
           />
           <div className="spgeo">
             <p>Центральный офис:</p>
@@ -135,6 +152,7 @@ Readonly<{
               src="/aboutus/footer/tel.png"
               width={1000}
               height={1000}
+              alt="Logo"
             />
             <div className="numb">
               <p>+7(978) 729 26 57</p>
@@ -150,6 +168,7 @@ Readonly<{
                   src="/aboutus/footer/inst.png"
                   width={1000}
                   height={1000}
+                  alt="Logo"
                 />
                 <div className="text">tm_sherbet</div>
               </a>
@@ -161,6 +180,7 @@ Readonly<{
                   src="/aboutus/footer/mail.png"
                   width={1000}
                   height={1000}
+                  alt="Logo"
                 />
                 <div className="text">info@sherbetgroup.ru</div>
               </a>
