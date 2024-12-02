@@ -21,20 +21,21 @@ export const ProductCard: React.FC<Props> = ({
   className,
 }) => {
   return (
+    <div className="bg-black rounded-lg w-[390px]">
     <div className={cn(className)}>
-      <Link href={`/product/${id}`}>
-        <div className="flex justify-center p-6 bg-black rounded-lg h-[260px]">
+      <Link href={`/product/${id}`} className="">
+        <div className="unity-black flex justify-center p-6 rounded-lg h-[260px]">
           <img
-            className="w-[215px] h-[215px] rounded-xl"
+            className="w-[360px] h-[215px] rounded-xl object-cover"
             src={imageUrl}
             alt="Logo"
           />
         </div>
 
-        <Title text={name} size="sm" className="mb-1 mt-3 font-bold" />
+        <Title text={name} size="sm" className="margin-l mb-1 mt-3 font-bold" />
 
-        <div className="flex justify-between items-center mt-4">
-          <span className="text-[20px]">
+        <div className="margin-l flex justify-between items-center mt-4 w-[339px] h-[100px]">
+          <span className="text-[20px] w-[100px]">
             от <b>{price} ₽</b>
           </span>
 
@@ -47,6 +48,7 @@ export const ProductCard: React.FC<Props> = ({
           </Button>
         </div>
       </Link>
+    </div>
     </div>
   );
 };

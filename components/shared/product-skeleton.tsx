@@ -7,7 +7,7 @@ interface Props {
 export const ProductSkeleton: React.FC<Props> = ({ className }) => {
   return (
     <div className={className}>
-      <div className="flex justify-center items-center p-6 bg-gray-50 rounded-lg h-[260px] animate-pulse">
+      <div className="bg-black flex justify-center items-center p-6 bg-gray-50 rounded-lg h-[260px] animate-pulse">
         <div className="w-[215px] h-[215px] rounded-full bg-gray-200 animate-pulse" />
       </div>
 

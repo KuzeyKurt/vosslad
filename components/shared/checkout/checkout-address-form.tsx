@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { WhiteBlock } from '../white-block';
-import { FormTextarea } from '../form';
-import { AdressInput } from '../address-input';
-import { Controller, useFormContext } from 'react-hook-form';
-import { ErrorText } from '../error-text';
+import React from "react";
+import { WhiteBlock } from "../white-block";
+import { FormTextarea } from "../form";
+import { AdressInput } from "../address-input";
+import { Controller, useFormContext } from "react-hook-form";
+import { ErrorText } from "../error-text";
 
 interface Props {
   className?: string;
@@ -22,8 +22,14 @@ export const CheckoutAddressForm: React.FC<Props> = ({ className }) => {
           name="address"
           render={({ field, fieldState }) => (
             <>
-              <AdressInput onChange={field.onChange} />
-              {fieldState.error?.message && <ErrorText text={fieldState.error.message} />}
+              <div>
+                {" "}
+                <AdressInput onChange={field.onChange} />
+              </div>
+
+              {fieldState.error?.message && (
+                <ErrorText text={fieldState.error.message} />
+              )}
             </>
           )}
         />
