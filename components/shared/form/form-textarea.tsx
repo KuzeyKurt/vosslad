@@ -1,3 +1,5 @@
+'use client'; // use client добавлен 
+
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
 import { X } from 'lucide-react';
