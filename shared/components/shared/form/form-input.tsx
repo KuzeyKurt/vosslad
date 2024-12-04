@@ -1,4 +1,4 @@
-'use client';
+'use client'; // use client добавлен 
 
 import { useFormContext } from 'react-hook-form';
 import { Input } from '../../ui/input';
