@@ -1,5 +1,5 @@
 import { AuthLayoutWrapper } from "@/components/auth/authLayout";
-import "@/styles/globals.css";
+import "../globals.css";
 
 const RootLayout: React.FC = () => {
   return (
