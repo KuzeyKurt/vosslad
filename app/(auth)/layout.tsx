@@ -1,20 +1,17 @@
-// app/aboutus/layout.tsx
 import React, { ReactNode } from 'react';
 
 interface LayoutProps {
-  children: ReactNode;        // Типизация для дочерних компонентов
-  modal: ReactNode;           // Если не используете modal, удалите это поле
+  children: ReactNode;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, modal }) => {
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div>
-      <header>Header content</header>
+      <header>Header Content</header>
       <main>{children}</main>
-      {modal}
-      <footer>Footer content</footer>
+      <footer>Footer Content</footer>
     </div>
   );
 };
 
-export default Layout;
+export default Layout; // Правильный экспорт
