@@ -1,27 +1,26 @@
-import React from 'react';
-import '../globals.css';
-import { Providers } from '../providers';
-import { Nunito } from 'next/font/google';
+'use client'; // use client добавлен 
+import React, { ReactNode } from 'react';
 
-const nunito = Nunito({
-  subsets: ['cyrillic'],
-  variable: '--font-nunito',
-  weight: ['400', '500', '600', '700', '800', '900'],
-});
+// interface LayoutProps {
+//   children: ReactNode;
+// }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html className={nunito.variable} lang="en">
-      <head>
-        <link data-rh="true" rel="icon" href="/logo.png" />
-      </head>
-      <body>
-        <Providers>{children}</Providers>
-      </body>
-    </html>
-  );
+type AboutLayoutProps = {
+  children?: React.ReactNode;
 }
+
+function AboutLayout(props: AboutLayoutProps) {
+  return <React.Fragment><header>Header Content</header>{props.children}</React.Fragment>;
+}
+
+// const AboutLayout: React.FC<LayoutProps> = ({ children }) => {
+//   return (
+//     <div>
+//       <header>Header Content</header>
+//       <main>{children}</main>
+//       <footer>Footer Content</footer>
+//     </div>
+//   );
+// };
+
+export default AboutLayout; // Правильный экспорт
