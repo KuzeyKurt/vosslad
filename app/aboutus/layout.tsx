@@ -1,26 +1,18 @@
-'use client'; // use client добавлен 
+// app/aboutus/layout.tsx
+'use client';
 import React, { ReactNode } from 'react';
 
-// interface LayoutProps {
-//   children: ReactNode;
-// }
-
 type AboutLayoutProps = {
-  children?: React.ReactNode;
+  children: ReactNode; // Делаем children обязательным
 }
 
-function AboutLayout(props: AboutLayoutProps) {
-  return <React.Fragment><header>Header Content</header>{props.children}</React.Fragment>;
+function AboutLayout({ children }: AboutLayoutProps) {
+  return (
+    <React.Fragment>
+      <header>Header Content</header>
+      {children}
+    </React.Fragment>
+  );
 }
-
-// const AboutLayout: React.FC<LayoutProps> = ({ children }) => {
-//   return (
-//     <div>
-//       <header>Header Content</header>
-//       <main>{children}</main>
-//       <footer>Footer Content</footer>
-//     </div>
-//   );
-// };
 
 export default AboutLayout; // Правильный экспорт
