@@ -1,17 +1,10 @@
-import React, { ReactNode } from 'react';
+import { AuthLayoutWrapper } from "@/components/auth/authLayout";
+import "@/styles/globals.css";
 
-interface LayoutProps {
-  children: ReactNode;
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <AuthLayoutWrapper>{children}</AuthLayoutWrapper>;
 }
-
-const Layout: React.FC<LayoutProps> = ({ children }) => {
-  return (
-    <div>
-      <header>Header Content</header>
-      <main>{children}</main>
-      <footer>Footer Content</footer>
-    </div>
-  );
-};
-
-export default Layout; // Правильный экспорт
