@@ -4,7 +4,7 @@ interface LayoutProps {
   children: ReactNode;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const AboutLayout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div>
       <header>Header Content</header>
@@ -14,4 +14,4 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   );
 };
 
-export default Layout; // Правильный экспорт
+export default AboutLayout; // Правильный экспорт
