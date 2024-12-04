@@ -1,10 +1,20 @@
-import { AuthLayoutWrapper } from "@/components/auth/authLayout";
-import "@/app/globals.css";
+// app/aboutus/layout.tsx
+import React, { ReactNode } from 'react';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return <AuthLayoutWrapper>{children}</AuthLayoutWrapper>;
+interface LayoutProps {
+  children: ReactNode;        // Типизация для дочерних компонентов
+  modal: ReactNode;           // Если не используете modal, удалите это поле
 }
+
+const Layout: React.FC<LayoutProps> = ({ children, modal }) => {
+  return (
+    <div>
+      <header>Header content</header>
+      <main>{children}</main>
+      {modal}
+      <footer>Footer content</footer>
+    </div>
+  );
+};
+
+export default Layout;
