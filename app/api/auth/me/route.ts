@@ -1,6 +1,9 @@
 import { getUserSession } from '@/lib/get-user-session';
 import { prisma } from '@/lib/prisma';
 import { NextResponse } from 'next/server';
+import NextAuth from "next-auth";
+
+
 
 export const dynamic = 'force-dynamic'; // добавлено для деплоя
 export async function GET() {
