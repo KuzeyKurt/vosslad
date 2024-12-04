@@ -1,18 +1,27 @@
-'use client'; // use client добавлен 
-import React, { ReactNode } from 'react';
+import React from 'react';
+import '../globals.css';
+import { Providers } from '../providers';
+import { Nunito } from 'next/font/google';
 
-interface LayoutProps {
-  children: ReactNode;
-}
+const nunito = Nunito({
+  subsets: ['cyrillic'],
+  variable: '--font-nunito',
+  weight: ['400', '500', '600', '700', '800', '900'],
+});
 
-const AboutLayout: React.FC<LayoutProps> = ({ children }) => {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <div>
-      <header>Header Content</header>
-      <main>{children}</main>
-      <footer>Footer Content</footer>
-    </div>
+    <html className={nunito.variable} lang="en">
+      <head>
+        <link data-rh="true" rel="icon" href="/logo.png" />
+      </head>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
+    </html>
   );
-};
-
-export default AboutLayout; // Правильный экспорт
+}
