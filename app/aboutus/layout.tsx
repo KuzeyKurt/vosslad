@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react';
-import "@/styles/globals.css";
 
 interface LayoutProps {
   children: ReactNode;
@@ -15,4 +14,4 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   );
 };
 
-// export default Layout; // Правильный экспорт
+export default Layout; // Правильный экспорт
