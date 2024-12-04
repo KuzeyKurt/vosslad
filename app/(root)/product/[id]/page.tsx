@@ -4,10 +4,14 @@ import { ProductsGroupList } from '@/components/shared/products-group-list';
 import { prisma } from '@/lib/prisma';
 import { notFound } from 'next/navigation';
 
-export default async function ProductPage({ params: { id } }: { params: { id: string } }) {
+type Props = {
+  params: Promise<{ id: string }>
+}
+
+export default async function ProductPage({ params }: Props ) {
   const product = await prisma.product.findFirst({
     where: {
-      id: Number(id),
+      id: Number((await params).id),
     },
     include: {
       ingredients: true,

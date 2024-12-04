@@ -12,9 +12,9 @@ import { Image } from "@/components/shared/cart-item-details/index";
 export default async function HomePage({
   searchParams,
 }: {
-  searchParams: GetSearchParams;
+  searchParams:  Promise<GetSearchParams>;
 }) {
-  const [categoryProducts, meta] = await findPizzas(searchParams);
+  const [categoryProducts, meta] = await findPizzas(await searchParams);
 
   return (
     <>

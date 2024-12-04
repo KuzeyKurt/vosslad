@@ -61,7 +61,7 @@ async function updateCartTotalAmount(userId: number, cartToken: string) {
   });
 }
 
-export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     const cartToken = req.cookies.get('cartToken')?.value;
     const currentUser = await getUserSession();
@@ -73,7 +73,7 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
 
     const cartItem = await prisma.cartItem.findFirst({
       where: {
-        id: Number(params.id),
+        id: Number((await params).id), // changed
       },
     });
 
@@ -129,7 +129,7 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
   }
 }
 
-export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(req: NextRequest, { params }: { params: Promise<{ id: string }> }) { // changed
   try {
     const cartToken = req.cookies.get('cartToken')?.value;
     const currentUser = await getUserSession();
@@ -141,7 +141,7 @@ export async function DELETE(req: NextRequest, { params }: { params: { id: strin
 
     const cartItem = await prisma.cartItem.findFirst({
       where: {
-        id: Number(params.id),
+        id: Number((await params).id),
       },
     });
 

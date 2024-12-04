@@ -1,24 +1,18 @@
-import type { Metadata } from "next";
-import { Header } from "@/components/shared/header";
-import { Providers } from "@/shared/components/shared/providers";
+'use client';
+import { Header } from '@/components/sidebar/sidebar.styles';
+import React, { ReactNode } from 'react';
 
-export const metadata: Metadata = {
-  title: "Sherbet | Сладости востока",
-  description: "Магазин восточных сладостей",
+type ContactLayoutProps = {
+  children: ReactNode; // children обязательно
+}
+
+const ContactLayout: React.FC<ContactLayoutProps> = ({ children }) => {
+  return (
+    <>
+      <Header />
+      {children}
+    </>
+  );
 };
 
-export default function RootLayout({
-  children,
-  modal,
-}: Readonly<{
-  children: React.ReactNode;
-  modal: React.ReactNode;
-}>) {
-  return (
-    <main className="min-h-screen bg-[#404040]">
-      <Header />
-      <Providers>{children}</Providers>
-      {modal}
-    </main>
-  );
-}
+export default ContactLayout;

@@ -7,12 +7,8 @@ export const metadata: Metadata = {
   description: "Магазин восточных сладостей",
 };
 
-export default function ContactPage({}: //   children,
-//   modal,
-Readonly<{
-  children: React.ReactNode;
-  modal: React.ReactNode;
-}>) {
+export default function ContactPage(){ //   children,
+
   return (
     <main className="min-h-screen bg-[#404040]">
       <div className="id1">
@@ -45,7 +41,7 @@ Readonly<{
           src="/info.png"
           width={1000}
           height={1000}
-   
+          alt = "image"
         />
         {/* <h2 className="txt1">
           Центральный офис:<p></p>Республика Крым г.Симферополь.
@@ -112,7 +108,7 @@ Readonly<{
           src="/info2.png"
           width={1000}
           height={1000}
-   
+          alt = "image"
         /></div>
         </div>
       </div>
