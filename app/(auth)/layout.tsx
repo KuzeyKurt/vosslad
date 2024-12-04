@@ -1,10 +1,13 @@
 import { AuthLayoutWrapper } from "@/components/auth/authLayout";
-// import "@/styles/globals.css";
+import "@/styles/globals.css";
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return <AuthLayoutWrapper>{children}</AuthLayoutWrapper>;
-}
+const RootLayout: React.FC = () => {
+  return (
+    <div>
+      <h1>About Us</h1>
+      {/* Другие элементы страницы */}
+    </div>
+  );
+};
+
+export default RootLayout;
