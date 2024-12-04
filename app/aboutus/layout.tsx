@@ -1,3 +1,4 @@
+'use client'; // use client добавлен 
 import React, { ReactNode } from 'react';
 
 interface LayoutProps {
