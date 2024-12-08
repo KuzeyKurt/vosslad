@@ -3,7 +3,9 @@
 import React from "react";
 import { WhiteBlock } from "../white-block";
 import { FormTextarea } from "../form";
-import { AdressInput } from "../address-input";
+import { AdressInput } from "../../shared/adress-input";
+//import { AdressInput } from "../address-input";
+ // ../../shared/components/ui/skeleton
 import { Controller, useFormContext } from "react-hook-form";
 import { ErrorText } from "../error-text";
 

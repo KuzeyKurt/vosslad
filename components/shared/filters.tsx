@@ -21,7 +21,11 @@ interface Props {
 export const Filters: React.FC<Props> = ({ className }) => {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const [filters, { set }] = useMap(Object.fromEntries(searchParams.entries()));
+  
+  const entries = searchParams ? searchParams.entries() : [];
+  const [filters, { set }] = useMap(Object.fromEntries(entries));
+
+  // const [filters, { set }] = useMap(Object.fromEntries(searchParams.entries()));
   const [ingredients, setIngredients] = React.useState<Ingredient[]>([]);
   const [selectedIngredientsIds, { toggle }] = useSet(new Set<string>());
   const [pizzaTypes, { toggle: togglePizzaTypes }] = useSet(new Set<string>());

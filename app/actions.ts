@@ -8,7 +8,7 @@ import { OrderStatus, Prisma, UserRole } from "@prisma/client";
 import { hashSync } from "bcrypt";
 import { cookies } from "next/headers";
 import { createPayment } from "@/lib/create-payment";
-import { CreateUserFormValues } from "@/components/shared/dashboard/forms/create-user-form/constants";
+// import { CreateUserFormValues } from "@/components/shared/dashboard/forms/create-user-form/constants";
 import { revalidatePath } from "next/cache";
 
 export async function registerUser(body: Prisma.UserCreateInput) {
@@ -89,7 +89,7 @@ export async function createOrder(data: TFormOrderData) {
   try {
     const currentUser = await getUserSession();
     const userId = Number(currentUser?.id);
-    const cookieStore = cookies();
+    const cookieStore = await cookies(); // changed
     const cartToken = cookieStore.get("cartToken")?.value;
 
     const userCart = await prisma.cart.findFirst({

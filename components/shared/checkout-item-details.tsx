@@ -4,6 +4,7 @@ import React from 'react';
 interface Props {
   title?: React.ReactNode;
   value?: React.ReactNode;
+  details?: string; //  details добавлено
   className?: string;
 }
 

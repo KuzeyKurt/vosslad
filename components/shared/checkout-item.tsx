@@ -9,10 +9,14 @@ import * as CartItemDetails from './cart-item-details';
 interface Props extends CartItemProps {
   onClickCountButton?: (type: 'plus' | 'minus') => void;
   onClickRemove?: () => void;
+  id: number // свойство id
   className?: string;
+  details: string;
+  disabled?: boolean
 }
 
 export const CheckoutItem: React.FC<Props> = ({
+  id,
   name,
   price,
   imageUrl,

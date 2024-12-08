@@ -3,6 +3,7 @@ import { ICartItem } from "@/store/cart";
 interface Props {
   name: string;
   pizzaSize?: number | null;
+  details?: string; // changed - details
   type?: number | null;
   ingredients?: ICartItem["ingredients"];
 }

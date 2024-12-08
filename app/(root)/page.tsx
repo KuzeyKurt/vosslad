@@ -7,7 +7,8 @@ import { Stories } from "@/components/shared/stories";
 import { Title } from "@/components/shared/title";
 import { TopBar } from "@/components/shared/top-bar";
 import { GetSearchParams, findPizzas } from "@/lib/find-pizzas";
-import { Image } from "@/components/shared/cart-item-details/index";
+import Image from 'next/image';
+
 
 export default async function HomePage({
   searchParams,
@@ -64,6 +65,7 @@ export default async function HomePage({
           src="/aboutus/footer/back.png"
           width={1000}
           height={1000}
+          alt="image"
         />
         {/* <Image src="/sherbet.png" width={250} height={250} /> */}
         {/* <Image
@@ -79,6 +81,7 @@ export default async function HomePage({
             src="/aboutus/footer/geo.png"
             width={1000}
             height={1000}
+            alt="image"
           />
           <div className="spgeo">
             <p>Центральный офис:</p>
@@ -91,6 +94,7 @@ export default async function HomePage({
               src="/aboutus/footer/tel.png"
               width={1000}
               height={1000}
+              alt="image"
             />
             <div className="numb">
               <p>+7(978) 729 26 57</p>
@@ -106,6 +110,7 @@ export default async function HomePage({
                   src="/aboutus/footer/inst.png"
                   width={1000}
                   height={1000}
+                  alt="image"
                 />
                 <div className="text">tm_sherbet</div>
               </a>

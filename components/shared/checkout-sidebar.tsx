@@ -2,7 +2,8 @@ import React from 'react';
 import { WhiteBlock } from './white-block';
 import { CheckoutItemDetails } from './checkout-item-details';
 import { ArrowRight, Package, Percent, Truck } from 'lucide-react';
-import { Button, Skeleton } from '../ui';
+import { Button} from '../ui/button';
+import {Skeleton} from '../../shared/components/ui/skeleton'
 import { cn } from '@/shared/lib/utils';
 
 const VAT = 15;

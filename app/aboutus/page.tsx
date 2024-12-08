@@ -109,6 +109,7 @@ const AboutUsPage = () => {
           src="/aboutus/lokum.png"
           width={1000}
           height={1000}
+          alt="image"
         />
       </div>
 
@@ -118,6 +119,7 @@ const AboutUsPage = () => {
           src="/aboutus/footer/back.png"
           width={1000}
           height={1000}
+          alt="image"
         />
         {/* <Image src="/sherbet.png" width={250} height={250} /> */}
         {/* <Image
@@ -133,6 +135,7 @@ const AboutUsPage = () => {
             src="/aboutus/footer/geo.png"
             width={1000}
             height={1000}
+            alt="image"
           />
           <div className="spgeo">
             <p>Центральный офис:</p>
@@ -145,6 +148,7 @@ const AboutUsPage = () => {
               src="/aboutus/footer/tel.png"
               width={1000}
               height={1000}
+              alt="image"
             />
             <div className="numb">
               <p>+7(978) 729 26 57</p>
@@ -160,6 +164,7 @@ const AboutUsPage = () => {
                   src="/aboutus/footer/inst.png"
                   width={1000}
                   height={1000}
+                  alt="image"
                 />
                 <div className="text">tm_sherbet</div>
               </a>
@@ -171,6 +176,7 @@ const AboutUsPage = () => {
                   src="/aboutus/footer/mail.png"
                   width={1000}
                   height={1000}
+                  alt="image"
                 />
                 <div className="text">info@sherbetgroup.ru</div>
               </a>

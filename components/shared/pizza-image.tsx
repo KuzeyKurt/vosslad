@@ -1,4 +1,5 @@
-import { PizzaSize } from "@/hooks/use-choose-pizza";
+// import { PizzaSize } from "@/hooks/use-choose-pizza";
+import { PizzaSize } from "@/lib/pizza-details-to-text";
 import { cn } from "@/lib/utils";
 import React from "react";
 
@@ -24,7 +25,7 @@ export const PizzaImage: React.FC<Props> = ({ className, imageUrl, size }) => {
           {
             "w-[300px] h-[300px]": size === 20,
             "w-[400px] h-[400px]": size === 30,
-            "w-[500px] h-[500px]": size === 40,
+            // "w-[500px] h-[500px]": size === 40,
           }
         )}
       />

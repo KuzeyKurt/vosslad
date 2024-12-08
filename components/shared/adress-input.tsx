@@ -9,7 +9,7 @@ interface Props {
 export const AdressInput: React.FC<Props> = ({ onChange }) => {
   return (
     <AddressSuggestions
-      className="text-green-700 bg-slate-700"
+      // className="text-green-700 bg-slate-700"
       token=""
       onChange={(data) => onChange?.(data?.value)}
     />
