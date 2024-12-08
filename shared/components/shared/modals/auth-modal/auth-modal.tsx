@@ -24,8 +24,9 @@ export const AuthModal: React.FC<Props> = ({ open, onClose }) => {
   };
 
   return (
+    <div className='text-green bg-black'>
     <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="w-[450px] bg-white p-10">
+      <DialogContent className="w-[450px] bg-white p-10 text-gray">
         {type === 'login' ? (
           <LoginForm onClose={handleClose} />
         ) : (
@@ -71,5 +72,6 @@ export const AuthModal: React.FC<Props> = ({ open, onClose }) => {
         </Button>
       </DialogContent>
     </Dialog>
+    </div>
   );
 };

@@ -53,6 +53,13 @@ html {
   color: white;
 }
 
+/* В вашем CSS-файле, например, styles.css */
+.react-dadata__input {
+  background-color: rgb(31, 31, 31); /* Измените цвет фона */
+  color: white; /* Измените цвет текста */
+}
+
+
 .color-gray {
   color: #030305;
 }

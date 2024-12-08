@@ -11,6 +11,7 @@ export default function ContactPage(){ //   children,
 
   return (
     <main className="min-h-screen bg-[#404040]">
+      <Header />
       <div className="id1">
         <Image
           className="back"

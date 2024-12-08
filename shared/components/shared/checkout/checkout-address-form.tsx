@@ -16,14 +16,15 @@ export const CheckoutAddressForm: React.FC<Props> = ({ className }) => {
 
   return (
     <WhiteBlock title="3. Адрес доставки" className={className}>
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col  gap-5">
         <Controller
           control={control}
           name="address"
           render={({ field, fieldState }) => (
             <>
+            <div className='bg-black text-green'>
               <AdressInput onChange={field.onChange} />
-              {fieldState.error?.message && <ErrorText text={fieldState.error.message} />}
+              {fieldState.error?.message && <ErrorText text={fieldState.error.message} />}</div>
             </>
           )}
         />

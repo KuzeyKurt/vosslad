@@ -8,10 +8,11 @@ interface Props {
 
 export const AdressInput: React.FC<Props> = ({ onChange }) => {
   return (
+    <div className="text-green-700">
     <AddressSuggestions
       // className="text-green-700 bg-slate-700"
       token=""
       onChange={(data) => onChange?.(data?.value)}
-    />
+    /></div>
   );
 };

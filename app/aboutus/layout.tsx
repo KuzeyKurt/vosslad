@@ -11,7 +11,8 @@ function AboutLayout({ children }: AboutLayoutProps) {
   return (
     <React.Fragment>
      
-      {children}
+     <main>
+     {children}</ main>
     </React.Fragment>
   );
 }

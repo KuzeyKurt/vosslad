@@ -16,7 +16,7 @@ const AboutUsPage = () => {
         <Header />
         <h1>About Us</h1>
         <main className="min-h-screen bg-[#404040]">
-       { <Image src="/sherbet.png" width={200} height={200} alt="Logo" /> }
+       {/* { <Image src="/sherbet.png" width={200} height={200} alt="Logo" /> } */}
      
       <div className="id1">
          <Image
