@@ -1,6 +1,7 @@
 // app/aboutus/layout.tsx
 'use client';
 import React, { ReactNode } from 'react';
+import { Header } from "@/components/shared/header";
 
 type AboutLayoutProps = {
   children: ReactNode; // Делаем children обязательным
@@ -9,7 +10,7 @@ type AboutLayoutProps = {
 function AboutLayout({ children }: AboutLayoutProps) {
   return (
     <React.Fragment>
-      <header>Header Content</header>
+     
       {children}
     </React.Fragment>
   );

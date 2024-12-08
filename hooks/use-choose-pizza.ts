@@ -3,6 +3,11 @@ import toast from 'react-hot-toast';
 import { useSet } from 'react-use';
 import { Ingredient, Product, ProductItem } from '@prisma/client';
 
+export type LocalPizzaSize = {
+  PizzaSize: string;   // например, размер пиццы
+   // например, диаметр пиццы
+};
+
 import {
   PizzaSize,
   PizzaSizeItem,

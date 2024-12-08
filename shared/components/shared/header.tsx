@@ -32,11 +32,12 @@ export const Header: React.FC<Props> = ({
   React.useEffect(() => {
     let toastMessage = "";
 
-    if (searchParams.has("paid")) {
+    // Проверка, что searchParams действительно существует
+    if (searchParams && searchParams.has("paid")) {
       toastMessage = "Заказ успешно оплачен! Информация отправлена на почту.";
     }
 
-    if (searchParams.has("verified")) {
+    if (searchParams && searchParams.has("verified")) { // добавлена проверка
       toastMessage = "Почта успешно подтверждена!";
     }
 
