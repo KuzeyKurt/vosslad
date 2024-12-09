@@ -59,6 +59,41 @@ html {
   color: white; /* Измените цвет текста */
 }
 
+.react-dadata__suggestions {
+  background-color: black; /* Фон выпадающего списка */
+  color: white; /* Цвет текста */
+  border: 1px solid gray; /* Рамка */
+}
+
+/* Стили для каждого элемента списка */
+.react-dadata__suggestion {
+  padding: 10px; /* Отступы */
+  cursor: pointer; /* Курсор под рукой на наведении */
+  color: rgb(41, 41, 41); /* Цвет текста */
+}
+
+/* Стили при наведении на элемент списка */
+.react-dadata__suggestion:hover {
+  background-color: gray; /* Цвет фона при наведении */
+}
+
+
+
+
+/* .react-dadata__suggestions {
+  background-color: rgb(31, 31, 31); 
+  color: white; 
+}
+
+.react-dadata__container{
+  background-color: rgb(31, 31, 31); 
+  color: white; 
+}
+
+#DTKSiH6msGKfdM3a33i{
+  background-color: rgb(31, 31, 31); 
+  color: white; 
+} */
 
 .color-gray {
   color: #030305;
@@ -374,6 +409,49 @@ body {
   height: 469px;
   margin-left: 120px;
   margin-top: -35%;
+}
+
+.txt-pahava
+{
+  position: absolute;
+  width: 662px;
+  height: 399px;
+  margin-left:58%;
+  margin-right: 120px;
+  margin-top: -35%;
+  font-size: 30px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px; 
+  border-radius: 11px; 
+  
+}
+.txt-pahava h2{
+  font-size: 55px;
+  font-weight: 800;
+}
+
+
+/* rahat */
+.txt-rahat
+{
+  position: absolute;
+  width: 662px;
+  height: 399px;
+  margin-left:11%;
+  /* margin-right: 120px; */
+  margin-top: -35%;
+  font-size: 30px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px; 
+  border-radius: 11px; 
+  
+}
+.txt-rahat h2{
+  font-size: 55px;
+  font-weight: 800;
+}
+.mar-pic{
+  margin-top: 12%;
 }
 
 .txt hr {

@@ -10,6 +10,7 @@ import { PizzaSelector } from "./pizza-selector";
 import { IProduct, useChoosePizza } from "@/hooks/use-choose-pizza";
 import { useSet } from "react-use";
 import toast from "react-hot-toast";
+import Image from "next/image";
 
 interface Props {
   imageUrl: string;
@@ -50,6 +51,8 @@ export const ChoosePizzaForm: React.FC<Props> = ({
     items?.find((item) => item.pizzaType === type)?.price || 0;
   const totalPrice: number = totalIngredientPrice + pizzaPrice;
 
+
+  const imageSrc = imageUrl.startsWith('/') ? imageUrl : '/' + imageUrl;
   const handleClickAdd = async () => {
     try {
       await addPizza();
@@ -62,7 +65,17 @@ export const ChoosePizzaForm: React.FC<Props> = ({
 
   return (
     <div className={cn(className, "flex flex-1")}>
-      <PizzaImage imageUrl={imageUrl} size={size} />
+      
+      {/* <PizzaImage imageUrl={imageUrl} size={size} /> */}
+      
+      <Image
+        src={imageSrc} // Убедитесь, что url корректный
+        alt="Logo"
+        className={cn("relative left-2 top-2 transition-all z-10 duration-300 w-[600px] h-[400px] mar-pic")}
+        width={800} // задайте size для компонента Image
+        height={800} // аналогично для высоты
+      />
+      
 
       <div className="w-[490px] bg-[#1b1b1b] p-7">
         <Title text={name} size="md" className="font-extrabold mb-1" />

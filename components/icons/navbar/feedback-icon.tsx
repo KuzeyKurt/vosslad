@@ -15,7 +15,7 @@ export const FeedbackIcon = () => {
         fill="#969696"
       />
       <path
-        className="fill-default-400"
+        className="fill-default-400 color-gray"
         d="M18 11.6089C18 12.1589 18.45 12.6089 19 12.6089H21C21.55 12.6089 22 12.1589 22 11.6089C22 11.0589 21.55 10.6089 21 10.6089H19C18.45 10.6089 18 11.0589 18 11.6089Z"
         fill="#969696"
       />

@@ -93,7 +93,15 @@ const AboutUsPage = () => {
           height={1000}
           alt="Logo"
         />
+        <div className="txt-pahava">
+<h2>Турецкая пахлава</h2>
+<p>В недавном прошлом, привилегия исключительно турецких султанов и свиты, в нынежнее же время этот прекрасный десерт имеет широкое распространение во всем мире.</p>
+</div>
       </div>
+
+
+
+
 
       <div className="block6">
         <Image
@@ -103,17 +111,28 @@ const AboutUsPage = () => {
           height={1000}
           alt="Logo"
         />
+         <div className="txt-rahat">
+<h2>Рахат-лукум</h2>
+<p>Сладость, которую готовят из воды, сахара и крахмала, с добавлением эссенции из лепестков роз, существует уже более 500 лет. </p>
+</div>
       </div>
 
       <div className="block7">
         <Image
           className="bl7back"
-          src="/aboutus/lokum.png"
+          src="/aboutus/halva.png"
           width={1000}
           height={1000}
           alt="image"
         />
+        <div className="txt-pahava">
+<h2>Халва</h2>
+<p>Сегодня халва считается популярной сладостью и во многих странах мира. В состав восточной сладости входит множество различных витаминов и микроэлементов.</p>
+</div>
       </div>
+
+      
+      
 
       <footer>
         <Image
