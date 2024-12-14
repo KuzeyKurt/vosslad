@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Title } from '@/components/shared/title';
 import { Button } from '@/components/ui/button';
 import { TFormLoginData, formLoginSchema } from './schemas';
@@ -8,6 +8,8 @@ import toast from 'react-hot-toast';
 import { FormInput } from '@/components/shared/form';
 import { signIn } from 'next-auth/react';
 import { revalidatePath } from 'next/cache';
+// import { useRef, useEffect } from 'react';
+
 
 interface Props {
   onClose?: VoidFunction;
@@ -43,6 +45,23 @@ export const LoginForm: React.FC<Props> = ({ onClose }) => {
       });
     }
   };
+
+  const formRef = useRef<HTMLDivElement>(null);
+  
+  // Обработка клика вне формы
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      // Проверяем, был ли клик вне элемента формы и вызовем onClose
+      if (formRef.current && !formRef.current.contains(event.target as Node)) {
+        onClose?.();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [onClose]);
 
   return (
     <FormProvider {...form}>
