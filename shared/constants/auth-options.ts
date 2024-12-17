@@ -32,7 +32,7 @@ export const authOptions: AuthOptions = {
         email: { label: 'Email', type: 'text' },
         password: { label: 'Password', type: 'password' },
       },
-      async authorize(credentials) {
+      async authorize(credentials   ) {
         if (!credentials) {
           return null;
         }
@@ -60,7 +60,7 @@ export const authOptions: AuthOptions = {
         }
 
         return {
-          id: findUser.id,
+          id: findUser.id.toString(),
           email: findUser.email,
           name: findUser.fullName,
           role: findUser.role,
